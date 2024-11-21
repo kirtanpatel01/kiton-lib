@@ -2,6 +2,7 @@ import { Sidebar } from "./components";
 import { Outlet } from "react-router-dom";
 
 const App = () => {
+  console.log("come in App.jsx")
   //   const codeData = [
   //     {
   //       lan: "javascript",
