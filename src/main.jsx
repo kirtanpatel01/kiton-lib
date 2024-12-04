@@ -8,7 +8,7 @@ import { Buttons, ComponentsLayout } from './components'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '',
     element: <App />,
     children: [
       {
