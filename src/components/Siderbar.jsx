@@ -45,14 +45,14 @@ function Siderbar() {
       icon: idea,
       txt: "Get Started",
       clr: "[#FFED64]",
-      to: "/",
+      to: "/kiton-lib",
     },
 
     {
       icon: component,
       txt: "Components",
       clr: "primary",
-      to: "/components",
+      to: "/kiton-lib/components",
     },
   ];
 
@@ -60,7 +60,7 @@ function Siderbar() {
     {
       icon: click,
       txt: "Buttons",
-      to: "/components/buttons",
+      to: "/kiton-lib/components/buttons",
     },
   ];
 

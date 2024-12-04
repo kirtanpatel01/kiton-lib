@@ -8,7 +8,7 @@ import { Buttons, ComponentsLayout } from './components'
 
 const router = createBrowserRouter([
   {
-    path: '',
+    path: '/kiton-lib',
     element: <App />,
     children: [
       {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         element: <GetStarted />
       },
       {
-        path: '/components',
+        path: '/kiton-lib/components',
         element: <ComponentsLayout />,
         children: [
           {
