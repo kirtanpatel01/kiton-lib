@@ -11,5 +11,6 @@ import btnGrp from './btnGrp.svg'
 import hamburger from './hamburger.svg'
 import hamburgerDark from './hamburgerDark.svg'
 import cross from './cross.svg'
+import party from './party.png'
 
-export { copy, tick, kiton, component, idea, click, left, light, moon, btnGrp, hamburger, hamburgerDark, cross };
+export { copy, tick, kiton, component, idea, click, left, light, moon, btnGrp, hamburger, hamburgerDark, cross, party };

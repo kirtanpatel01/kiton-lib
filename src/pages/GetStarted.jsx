@@ -1,6 +1,6 @@
 import React from "react";
-import { btnGrp } from "../assets";
-import { CodeBlock, ParagraphBox } from "../components";
+import { btnGrp, party } from "../assets";
+import { CodeBlock, CodedLine, ParagraphBox } from "../components";
 
 function GetStarted() {
   const para_content = [
@@ -27,15 +27,22 @@ function GetStarted() {
     },
 
     {
-      data: `To get it you need to configure the path to the Kiton’s components
-          into the tailwind.config.js file, so tailwind can scan all the
-          components for styling classes.`,
+      data: (
+        <p>
+          To get it you need to configure the path to the{" "}
+          <span className="text-">Kiton’s</span> components into the{" "}
+          <CodedLine text="tailwind.config.js" /> file, so tailwind can scan all
+          the components for styling classes.
+        </p>
+      ),
     },
 
     {
       data: (
         <div>
-          <p  className="mb-4">You just have to add this line into content object:</p>
+          <p className="mb-4">
+            You just have to add this line into content object:
+          </p>
           <CodeBlock
             language="javascript"
             code={`"./node_modules/kiton/dist/**/*.{js,jsx}"`}
@@ -67,6 +74,7 @@ function GetStarted() {
           className="hidden lg:flex max-w-80 xl:max-w-sm"
         />
       </div>
+
       {/* Installation steps: */}
       <div className="max-w-lg">
         <h2 className="text-2xl xl:text-3xl font-bold underline underline-offset-8 decoration-primary">
@@ -77,6 +85,65 @@ function GetStarted() {
             <ParagraphBox content={cont.data} />
           ))}
         </ul>
+      </div>
+
+      {/* after installation */}
+      <div className="my-8">
+        <h2 className="text-2xl xl:text-3xl flex items-center gap-4 font-bold">
+          <span>Congratulations !</span>
+          <img src={party} alt="party_emogi" />
+        </h2>
+
+        <ParagraphBox
+          content={
+            <div >
+              <p className="">
+                Now, you’re ready to go! What you just have to do is import the
+                required component like below in your <CodedLine text=".jsx" />{" "}
+                file:
+              </p>
+              <CodeBlock
+                className="my-4"
+                language="javascript"
+                code={`import { 
+      Button, 
+      ButtonLoading, 
+      ButtonOutline, 
+      ButtonPrimary, 
+      ButtonSecondary 
+    } from "kiton";`}
+              />
+            </div>
+          }
+        />
+
+        <ParagraphBox
+          content={
+            <div>
+              <p>
+                Example use case of above imported components:
+              </p>
+              <CodeBlock
+                className="my-4"
+                language="javascript"
+                code={`function App() { 
+   return ( 
+      <div> 
+          <span className="">Kiton's workspace !</span> 
+          <div className="flex flex-col gap-5 w-fit m-8"> 
+              <Button /> <ButtonPrimary text="Primary" /> 
+              <ButtonSecondary text="Secondary" /> 
+              <ButtonOutline text="Outline" /> 
+              <ButtonLoading text="Loading..." isLoading={true} /> 
+          </div> 
+     </div> ); 
+  }  
+
+export default App;`}
+              />
+            </div>
+          }
+        />
       </div>
     </div>
   );
