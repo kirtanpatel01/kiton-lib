@@ -8,13 +8,12 @@ import {
   light,
   moon,
   hamburger,
-  hamburgerDark,
   cross,
 } from "../assets";
 import { Link, NavLink } from "react-router-dom";
 
 function Siderbar() {
-  const [side, setSide] = useState(false);
+  const [selected, setSelected] = useState("Get Started");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -65,47 +64,47 @@ function Siderbar() {
   ];
 
   return (
-    <div className="sm:h-screen flex sm:flex-col items-start sm:items-center justify-between p-2 sm:py-4 bg-secondary dark:bg-darkSecondary">
+    <div className="fixed w-full sm:w-fit sm:h-screen flex sm:flex-col items-start sm:items-center justify-between p-2 sm:py-4 bg-secondary dark:bg-darkSecondary dark:text-[#D7E5FF]">
       <button className="hamurger sm:hidden">
         <img
           onClick={() => setVisible((pre) => !pre)}
           src={visible ? cross : hamburger}
           alt="hamburger"
-          className="h-11 rounded-lg bg-secondary dark:bg-darkSecondary"
+          className="h-8 rounded-lg bg-secondary dark:bg-darkSecondary"
         />
       </button>
 
       <div className="logo flex items-center sm:hidden">
         <img src={kiton} alt="kiton-logo" className="h-11" />
-        <span className="text-primary font-bold text-2xl">KITON</span>
+        <span className="text-primary font-bold text-2xl mt-2">KITON</span>
       </div>
 
       <div
         className={`absolute sm:relative w-full bg-secondary dark:bg-darkSecondary top-14 sm:top-0 left-0 ${visible ? "block" : "hidden"} sm:block`}
       >
         <div className="logo sm:flex items-center hidden">
-          <img src={kiton} alt="kiton-logo" className="h-16" />
-          <span className="text-primary font-bold text-3xl">KITON</span>
+          <img src={kiton} alt="kiton-logo" className="h-12" />
+          <span className="text-primary font-bold text-3xl mt-2">KITON</span>
         </div>
 
-        <div className="sideNav w-full h-0.5 bg-white rounded-md my-2"></div>
+        <div className="sideNav w-full h-[1px] bg-base rounded-md my-2"></div>
 
         <ul className="flex flex-col gap-2 px-1 sm:px-0 pb-2">
           {buttons.map((btn, index) => (
             <NavLink
               to={btn.to}
               key={index}
-              onClick={() =>
-                btn.to === "components" ? setSide(true) : setSide(false)
-              }
-              className={({ isActive }) =>
-                `flex items-center gap-2 cursor-pointer rounded-full p-2 ${isActive ? "bg-primary" : ""} hover:bg-primary hover:bg-opacity-45 bg-opacity-25`
-              }
+              onClick={() => {
+                setSelected(btn.txt);
+                setVisible(false);
+              }}
+              className={`flex items-center gap-2 cursor-pointer rounded-full p-2 hover:bg-primary hover:bg-opacity-45
+                ${selected === btn.txt ? "bg-primary bg-opacity-25" : ""}`}
             >
               <img
                 src={btn.icon}
                 alt="component"
-                className={`h-12 p-2 ${
+                className={`h-10 p-2 ${
                   btn.clr === "primary" ? "bg-primary" : "bg-[#FFED64]"
                 } rounded-full`}
               />
@@ -115,9 +114,9 @@ function Siderbar() {
         </ul>
       </div>
 
-      <button onClick={toggleDarkMode} className="flex items-center gap-3">
+      <button onClick={toggleDarkMode} className="flex items-center">
         <img
-          className="h-10 rounded bg-primary dark:bg-secondary"
+          className="h-7 m-1.5 sm:h-8 rounded bg-primary dark:bg-secondary"
           src={isDarkMode ? moon : light}
           alt={isDarkMode ? "moon" : light}
         />

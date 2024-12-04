@@ -62,9 +62,9 @@ const App = () => {
     ];
 
   return (
-    <div className="app flex flex-col sm:flex-row font-sans gap-3 sm:gap-6 bg-[#D7E5FF] dark:bg-darkBase dark:text-white duration-150">
+    <div className="sticky app flex flex-col sm:flex-row font-sans gap-3 sm:gap-6 bg-[#D7E5FF] dark:bg-darkBase dark:text-[#D7E5FF] duration-150">
       <Sidebar />
-      <div className="flex-1 px-2 pt-6 ">
+      <div className="flex-1 px-2 pt-6 sm:ml-48">
         {/* <CodeBox language="javascript" codeData={codeData} /> */}
         <Outlet />
       </div>
