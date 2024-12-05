@@ -64,7 +64,7 @@ function Siderbar() {
   ];
 
   return (
-    <div className="fixed w-full sm:w-fit sm:h-screen flex sm:flex-col items-start sm:items-center justify-between p-2 sm:py-4 bg-secondary dark:bg-darkSecondary dark:text-[#D7E5FF]">
+    <div className="z-50 fixed w-full sm:w-fit sm:h-screen flex sm:flex-col items-start sm:items-center justify-between p-2 sm:py-4 bg-secondary dark:bg-darkSecondary dark:text-[#D7E5FF]">
       <button className="hamurger sm:hidden">
         <img
           onClick={() => setVisible((pre) => !pre)}
