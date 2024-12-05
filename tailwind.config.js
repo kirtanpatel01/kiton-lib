@@ -21,6 +21,13 @@ export default {
         lineClr: '#A5C0EE',
         darkLineClr: '#CBCDCF',
       },
+
+      boxShadow: {
+        'custom-glow': '0 0 4px rgba(104, 87, 255, 0.9), 0 0 15px rgba(104, 87, 255, 0.6)', // Adjust the color and blur values to suit the glow
+        'custom-glow-dark': '0 0 6px rgba(75, 0, 130, 1), 0 0 25px rgba(75, 0, 130, 0.8)', // Darker and more purple glow
+      },
+      
+      
     },
 
     screens: {

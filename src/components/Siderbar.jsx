@@ -98,8 +98,8 @@ function Siderbar() {
                 setSelected(btn.txt);
                 setVisible(false);
               }}
-              className={`flex items-center gap-2 cursor-pointer rounded-full p-2 hover:bg-primary hover:bg-opacity-45
-                ${selected === btn.txt ? "bg-primary bg-opacity-25" : ""}`}
+              className={`flex items-center gap-2 cursor-pointer rounded-full p-2 hover:bg-primary hover:bg-opacity-45  border border-primary border-opacity-35
+                ${selected === btn.txt ? "bg-primary bg-opacity-25" : "border-transparent"}`}
             >
               <img
                 src={btn.icon}

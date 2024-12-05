@@ -54,9 +54,10 @@ function GetStarted() {
 
   return (
     <div className="get-started">
+
       {/* hero section */}
       <div className="hero flex justify-between">
-        <div className=" sm:mt-28">
+        <div className="lg:mt-28">
           <h1 className="flex flex-col text-3xl sm:text-4xl xl:text-5xl font-bold gap-4">
             <span>Hey there,</span>
             <span>
@@ -81,8 +82,10 @@ function GetStarted() {
           To do so what you need ?
         </h2>
         <ul className="flex flex-col gap-6 mt-4 sm:mt-6 ml-2 sm:ml-4 text-lg xl:text-xl">
-          {para_content.map((cont) => (
-            <ParagraphBox content={cont.data} />
+          {para_content.map((cont, index) => (
+            <ParagraphBox 
+            key={index}
+            content={cont.data} />
           ))}
         </ul>
       </div>
@@ -95,8 +98,9 @@ function GetStarted() {
         </h2>
 
         <ParagraphBox
+          clasName="mx-2"
           content={
-            <div >
+            <div>
               <p className="">
                 Now, you’re ready to go! What you just have to do is import the
                 required component like below in your <CodedLine text=".jsx" />{" "}
@@ -118,6 +122,7 @@ function GetStarted() {
         />
 
         <ParagraphBox
+          clasName="mx-2"
           content={
             <div className="w-fit">
               <p>
