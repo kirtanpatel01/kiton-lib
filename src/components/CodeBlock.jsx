@@ -15,7 +15,7 @@ const CodeBlock = ({ language, code, single=true, className='' }) => {
   const savedTheme = localStorage.getItem("theme");
 
   return (
-    <div className={`flex ${className}`}>
+    <div className={`flex ${className} overflow-x-auto`}>
       <SyntaxHighlighter
         language={language}
         style={vscDarkPlus}
