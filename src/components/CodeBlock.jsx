@@ -17,9 +17,12 @@ const CodeBlock = ({ language, code, single=true, className='' }) => {
   return (
     <div className={`flex ${className}`}>
       <SyntaxHighlighter
+        className="w-64 min-[375px]:w-80 md:w-full"
         language={language}
         style={vscDarkPlus}
         customStyle={{
+          // width: "100px",
+          overflowX: "auto",
           backgroundColor: savedTheme === "dark" ? "#211A1D" : "#100C1D",
           borderBottomLeftRadius: ".6rem",
           borderTopLeftRadius: single ? '.6rem' : '0',

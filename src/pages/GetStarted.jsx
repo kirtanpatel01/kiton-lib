@@ -119,7 +119,7 @@ function GetStarted() {
 
         <ParagraphBox
           content={
-            <div>
+            <div className="w-fit">
               <p>
                 Example use case of above imported components:
               </p>
